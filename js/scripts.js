@@ -1,16 +1,18 @@
 //back-end
 function encryptor(inputSentence) {
- var inputSentence = inputSentence.toLowerCase();
- var inputSentence = "It was a Hard day's night!";
- var lowerSentence=inputSentence.toLowerCase();
- var sentenceRegex = /[a-z]/g;
- sentenceArray = (lowerSentence.match(sentenceRegex));
- sentenceLength = sentenceArray.length;
- var sentenceRoot = Math.sqrt(sentenceLength);
- var sentenceRootProduct =
- Math.ceil(sentenceRoot)
+  var inputSentence = inputSentence.toLowerCase();
+  var lowerSentence=inputSentence.toLowerCase();
+  var sentenceRegex = /[a-z]/g;
+  sentenceArray = (lowerSentence.match(sentenceRegex));
+  var sentence = sentenceArray.join("");
+  sentenceLength = sentenceArray.length;
+  var sentenceRoot = Math.sqrt(sentenceLength);
+  var sentenceRootProduct = Math.ceil(sentenceRoot);
 
- console.log(sentenceRootProduct);
+  for (var i=0; i<sentenceLength; i+=sentenceRootProduct) {
+  alert(sentence.substr(i, sentenceRootProduct))
+  }
+
 
 
 }
